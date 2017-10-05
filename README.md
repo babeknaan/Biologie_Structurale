@@ -82,8 +82,11 @@ The Benchmark using bellow is a JavaScript program we have written comparing the
 We would have prefered to compare the algorithms without the whole plugin. Unfortunately, we don't have access to all the source codes of our plugins. Therefore, it is not possible to implement Benchmark directly in the plugins. 
 
 
-![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/embryos.jpg " Optional title")
+![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/embryos.jpg "Reference Image")
 https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/embryos.jpg
+*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+
+
 
 /!\ à faire -> numéroter les pages, revoir le nb d'iter warmup+test, rajouter des trucs dans l'intro, ajouter les images, 
 
