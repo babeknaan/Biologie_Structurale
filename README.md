@@ -105,7 +105,8 @@ To compare the two plugins, it is interesting to study the outputs of the *FFT* 
 *Figure 1: Output of ////// plugin showing the power spectrum of the image*
 
 Compare the *FFT* plugins can be done thanks to a quantitative approach, but it is hard to compare it qualitatively. Indeed, it is difficult to know what the *FFT* of an image should look like. But we can see that the two plugins do not display the same windows, and it is a thing we can compare.
-We can see that each plugin display two images. The *Xlib* plugin displays the image of the real part of the image (which interest us) and also the imaginary part of the image. The real part represent the cosinus waves and the imaginary part the sinus waves. ??? . 
+We can see that each plugin display two images. The *Xlib* plugin displays the image of the real part of the image (which interest us) and also the imaginary part of the image. The real part represent the magnitude multiplyed by cosinus phase and the imaginary part the magnitude multiplied by sinus phase. A QUOI CA SERT LA PART IMG . 
+The preibisch displays the power and the phase. the phase tells us where is the frequency in the image. QU'EST CE QUE C'EST ET A QUOI CA SERT + DECRIRE MAGNITUDE
 It is interesting to notice that the Preibisch plugin just display half of the FFT show by Xlib plugin. It is not a problem because half is enough because the FFT is similar about the origin (first quadrant is similar to the third and the second to the fourth). 
 We can see that the Power FFT of Xlib and the Real part FFT of Preibisch display the same information. Nevertheless, the second window open by the plugins bring us different information. .......
 
