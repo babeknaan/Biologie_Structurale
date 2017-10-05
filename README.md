@@ -83,10 +83,22 @@ We would have prefered to compare the algorithms without the whole plugin. Unfor
 
 
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/embryos.jpg "Reference Image")
-https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/embryos.jpg
 *Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
 
 
+![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/beat_FFT%202D_imag_no%20scal.jpg "Reference Image")
+*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+
+
+![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/beat_FFT2D_real_no%20scal.jpg "Reference Image")
+*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+
+
+![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/fft_Phase_of_img.jpg "Reference Image")
+*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+
+![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/fft_Power_of_img.jpg "Reference Image")
+*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
 
 /!\ à faire -> numéroter les pages, revoir le nb d'iter warmup+test, rajouter des trucs dans l'intro, ajouter les images, 
 
