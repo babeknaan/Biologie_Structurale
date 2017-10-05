@@ -87,6 +87,7 @@ To run our Benchmark, we have chosen an image in the image samples of *ImageJ* :
 *Figure 1: Image from samples of ImageJ, used as a reference image to run the FFT plugins*
 
 
+
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/beat_FFT%202D_imag_no%20scal.jpg "Reference Image")
 *Figure 2: Output of ////// plugin showing the imaginary part of the image*
 
