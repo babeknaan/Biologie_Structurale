@@ -81,24 +81,25 @@ As one of our algorithm only computes grey-scale images, two comparison will be 
 The Benchmark using bellow is a JavaScript program we have written comparing the time of execution and the memory used. We have run this test 10 000 times for each plugin to have enough data. Forthermore, there is a warm-up phase of 100 iteration.
 We would have prefered to compare the algorithms without the whole plugin. Unfortunately, we don't have access to all the source codes of our plugins. Therefore, it is not possible to implement Benchmark directly in the plugins. 
 
+To run our Benchmark, we have chosen an image in the image samples of *ImageJ* : *embryos.jpg*.
 
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/embryos.jpg "Reference Image")
-*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+*Figure 1: Image from samples of ImageJ, used as a reference image to run the FFT plugins*
 
 
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/beat_FFT%202D_imag_no%20scal.jpg "Reference Image")
-*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+*Figure 2: Output of ////// plugin showing the imaginary part of the image*
 
 
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/beat_FFT2D_real_no%20scal.jpg "Reference Image")
-*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+*Figure 1: Output of ////// plugin showing the real part of the image*
 
 
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/fft_Phase_of_img.jpg "Reference Image")
-*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+*Figure 1: Output of ////// plugin showing the phase spectrum of the image*
 
-![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/fft_Power_of_img.jpg "Reference Image")
-*Figure 1: Image from samples of ImageJ, used to run the FFT plugins*
+![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/fft_Power_of_img_embryos.jpg "Reference Image")
+*Figure 1: Output of ////// plugin showing the power spectrum of the image*
 
 /!\ à faire -> numéroter les pages, revoir le nb d'iter warmup+test, rajouter des trucs dans l'intro, ajouter les images, 
 
