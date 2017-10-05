@@ -1,6 +1,6 @@
 # The Fast Fourier Transform
 
-##Introduction
+## Introduction
 http://www.dtic.mil/dtic/tr/fulltext/u2/a212493.pdf
 
 Jean Baptiste Joseph Fourier is a XIXth century mathematician known for his work about warm propagation. This study leads him to transform any function of a variable in a series of periodic functions (Fourier series). (Théorie analytique de la chaleur
@@ -16,9 +16,10 @@ The first algorithm of DFT was written by Gauss who worked on asteroid's orbites
 In the image processing domain, the FFT can be used to remove unwanted elements or to improve the visualisation for posterior treatments. As it works with periodic signals, it also can be used in sound treatment for instance.
 
 How the FFT algorithms work and what algorithm is the most efficient are the questions this study is based on. 
-To answer it, we will use ImageJ as a reference. The base implemented function is not a Direct Fourier Transform but an Harley transform. It does similar operations but without using complex numbers so it is more efficient. As it is not a Fourier Transform, it will not be evocate later. However there are ImageJ *FFT* plugins that we can compare. The comparison will be done using Micro Benchmarking.
+To answer it, we will use ImageJ as a reference. *ImageJ* is an image processing program developed with Java language by the National Institutes of Health. It's an open architecture, and provides extensibility. Java plugins and recordable macros can be created to custom analysis and processing. This allows a great freedom of adapation to resolve many problem. 
+ImageJ is mainly used by the scientists, including the biologists. The base implemented function is not a Direct Fourier Transform but an Harley transform. It does similar operations but without using complex numbers so it is more efficient. As it is not a Fourier Transform, it will not be evocate later. However there are ImageJ *FFT* plugins that we can compare. The comparison will be done using Micro Benchmarking.
 
-##Material and Methods
+## Material and Methods
 parler de la fft implémentée de base dans imageJ et de la FHT
 FFTJ / Sean Parsons + ref
 
@@ -39,21 +40,21 @@ Similarely, the prime factor algorithm (PFA) only works if the factors of N (N1 
 -------------------------------------------
 The main principle of FFT is to apply several small Discrete Fourier Transforms (DFT). A DFT converts a finite sequence of N equally-spaced samples. In image processing, pixels value along a row or column are generally used. This sequence is then computed into a same length sequence of a complex-valued samples which are function of frequency. The DFT is therefore said to be a frequency domain representation of the original input. From a theoretical point of view, the complexity issue of the discrete Fourier transform has reached a certain maturity. Some work on length-2 DFTs showed the linear multiplicative complexity of DFT. Appart from that, as it deals with a finite amount of data, it is nowadays efficiently implemented in computers numerical FFT algorithms.
 
-###Cooley & Tukey FFT Algorithm (1805/Gauss, Widespread 1965/Cooley&Tukey)
+### Cooley & Tukey FFT Algorithm (1805/Gauss, Widespread 1965/Cooley&Tukey)
 As the Fourier Transform is widely used, a lot of algorithms have been made to compute it. The most common algorithm is called the *Cooley&Tukey FFT Algorithm*. It was first defined by Gauss, but Cooley and Tukey widespread it in 1965, putting it as a strong reference since then. This algorithm consists in a break of the DFT into smaller DFTs, triggering a N1 smaller DFTs of sizes N2 (N=N1N2). Either N1 and N2 can possibly becoe a small factor called radix. If N1 is the radix, the variant computed technique will be called Decimation in Time (DIT). In an other hand, if N2 become the radix, the technique would be a Decimation in Frequency (DIF). We can also differenciate 2 computational differences depending on the N samples. If N is a power of two, The Cooley variant algorithm will be a *Radix-2*, which is mathematically considered as the simpliest and highly optimized algorithm. The algorithm in this case first computes into two indexed inputs for odd and even numbers. Then it recursively combines the two resulted DFTs parts to produce the DFT in one whole sequence. A similar process is done when N isn't a power of two, with a technique called *Mixed Radix* : The N DFT is computable using two N/2 DFTs, and can have a recursive application using a twiddle factor. A Twiddle Factor is any of the trigonometric constant coefficient multiplied by the input data during the algorithm. They are used to recursively combine smaller DFT.
 
-###Prime Factor Algorithm (PFA)
+### Prime Factor Algorithm (PFA)
 The PFA is also called *Good-Thomas Algorithm*.
 Algorithm that is derived from the ancient chinese remainder theorem.
 It is more efficient when factors of N are mutually prime, and is ideally combined with a mixed radix algorithm. Actually, the PFA can be confused with the radix Cooley&Tukey algorithm. But PFA can only work with relatively prime factors and requires a more complex re-indexing of the input, making it less used. However PFA doesn't need any twiddle factor during the computation process.
 
-###Cyclic Convolutionnal Algorithms
+### Cyclic Convolutionnal Algorithms
 Determined in late XXth century, They're also based on Cooley&Tukey Algorithm. We can distinguish 2 main algorithm. First *Rader's algorithm* (1968/Charles M. Rader), which is based on prime sized DFTs as a cyclic convolution. It only depends upon the periodicity of DFT Kernel. But a factor of 2 can be applied, saving the real data. One other is *Bluestein's Algorithm*, or *Chirp-z Transform*, wich computes a cyclic convolution for prime sized DFTs. The specialty of this algorithm is that it could compute the DFT, real DFT and zoom DFT. Bluestein FFT algorithm can be used to compute a contiguous subset of DFT frequency samples, and research are still made to improve is efficiency.
 
-###Bruun's Algorithm (1978)
+### Bruun's Algorithm (1978)
 It is based on a recursive polynomial factorization. It involve only a real coefficient until last computational stage. Furthermore, it may intrisically be less accurate than Cooley&Tukey. It is a good FFT based approach on real data though.
 
-###Hexagonal FFT
+### Hexagonal FFT
 Hexagonal FFT (HFFT) has first been developed to use the advantages of hexagonal sampling wich provides good digital methods to process signals. It computes a FFT with a separable Fourier kernel utilizing Array Set Addressing (ASA) scheme and an Hexagonal Fast Fourier Transform (HDFT ). An hexagonal grid improves the efficiency because of its higher symmetry and consistent connectivity. Despite that, its application is limited because of its inability to compute orthogonal rows and columns, as a Cooley&Tukey algorithm.
 
 All of those methods are available to compute FFT. The question now is to know which of those methods and which implementation of it will be the more efficient. To answer it, we will use Benchmarking, more precisely Micro-Benchmarking. The Benchmark consists in knowing the relative performance of a program while running it. Factors such as the used resources like the memory and CPU will be mesured. The values obtained are then compared to other programs with the same purpose. It allow the developper to see if his algorithm and implementation are an improvement compared to the references. Micro Benchmarking is a specific Benchmark. The difference is that Micro Benchmark just mesure the performances of a little piece of code, here we compare plugins and not softwares for instance.
@@ -61,7 +62,7 @@ All of those methods are available to compute FFT. The question now is to know w
 In this study, running time and used memory will be mesured and will allow us to compare plugins using different algorithms.
 In theory we are also supposed to compare the use of CPU
 
-##Results
+## Results
 parler de la config du pc utilisé
 parler plus du benchmark
 parler du protocol utilisé pour comp les img
@@ -105,18 +106,22 @@ To run our Benchmark, we have chosen an image in the image samples of *ImageJ* :
 /!\ à faire -> numéroter les pages, revoir le nb d'iter warmup+test, rajouter des trucs dans l'intro, ajouter les images, 
 
 
-##Discussion
+## Discussion
 remettre les résulats d'efficacité dans leur contexte (plus ou moins d'options proposées, date de sortie des plug in, parler du fait qu'on utilise que java etc.)
 
-##Conclusion
+## Conclusion
 récap résult+Discussion
 en ouv parler de la suite du projet
 
-##References
+## References
 
 [^PIC1988]: Piccini F. Technical Memorandum: The Fast Hartley Transform as an alternative to the Fast Fourier Transform. Surevillance Research Laboratory.1988 Feb
+
 [^HEI1984]: Heideman MT, Johnson DC, Sidney Burrus C. Gauss and the History of the Fast Fourier Transform. IEEE ASSP Magazine. 1984 Oct; 1(4):14-21
+
 [^DUH1999]: Duhamel P, Vetterli M. Fast Fourier Transform: A Tutorial Review and a State of the Art. Signal Processing. 1999;19:259-299
+
 [^AMA2015]: Amannah CI, Bakpo FS. Simplified Bluestein numerical Fast Fourier Transforms Algorithm for DSP and ASP. International Journal of Research Granthaalayah. 2015 Nov
+
 [^WEE1984]: Weed JC, Polge RJ. An efficient implementation of a Hexagonal FFT. Acoustics, Speech and Signal Processing IEEE Conference. 1984 Material
 
