@@ -17,7 +17,8 @@ In the image processing domain, the FFT can be used to remove unwanted elements 
 
 How the FFT algorithms work and what algorithm is the most efficient are the questions this study is based on. 
 To answer it, we will use ImageJ as a reference. *ImageJ* is an image processing program developed with Java language by the National Institutes of Health. It's an open architecture, and provides extensibility. Java plugins and recordable macros can be created to custom analysis and processing. This allows a great freedom of adapation to resolve many problem. 
-ImageJ is mainly used by the scientists, including the biologists. The base implemented function is not a Direct Fourier Transform but an Harley transform. It does similar operations but without using complex numbers so it is more efficient. As it is not a Fourier Transform, it will not be evocate later. However there are ImageJ *FFT* plugins that we can compare. The comparison will be done using Micro Benchmarking.
+ImageJ is mainly used by the scientists, including the biologists.https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5554542/
+The base implemented function is not a Direct Fourier Transform but an Harley transform. It does similar operations but without using complex numbers so it is more efficient. As it is not a Fourier Transform, it will not be evocate later. However there are ImageJ *FFT* plugins that we can compare. The comparison will be done using Micro Benchmarking.
 
 ## Material and Methods
 parler de la fft implémentée de base dans imageJ et de la FHT
@@ -69,7 +70,7 @@ parler du protocol utilisé pour comp les img
 donner les résult 
 plugins : 
 -> parallel fftj (https://sites.google.com/site/piotrwendykier/software/parallelfftj) -> cooley à check
--> beat (http://imagej.net/Xlib#.27Xlib.27_plugins) -> beistein
+-> beat (http://imagej.net/Xlib#.27Xlib.27_plugins) -> bluestein
 -> fft (http://fly.mpi-cbg.de/~preibisch/software.html) -> cooley
 parler du facteur 10
 
@@ -78,16 +79,16 @@ Here will be compared three FFT algorithm : two *Cooley Tukey FFT algorithm* and
 One of the *Cooley Tukey FFT algorithm* is from the website of Preibisch Laboratory, the Berlin Institute of Medical Systems Biology (BIMSB). This website contains the *FFT Transform Plugin (2D/3D)* which display the phase spectrum and the power spectrum.
 The second *Cooley Tukey FFT algorithm* plugin is from the website of the PhD Piotr Wendykier. It is an improved version of the *FFTJ* plugin written by Nick Linnebrügger. For this plugin, RGB images are not supported.
 The last algorithm, using *Bluestein FFT algorithm*, is from the *Xlib* plugins and can process *FFT* 2D and 3D images of arbitrary size and give the real and imaginary part of the *FFT*. It also does the reverse *FFT*.
-As one of our algorithm only computes grey-scale images, two comparison will be done : one with the three plugins on grey scaled images and one with the two plugins working with colored images. 
+/////As one of our algorithm only computes grey-scale images, two comparison will be done : one with the three plugins on grey scaled images and one with the two plugins working with colored images. 
 The Benchmark using bellow is a JavaScript program we have written comparing the time of execution and the memory used. We have run this test 10 000 times for each plugin to have enough data. Forthermore, there is a warm-up phase of 100 iteration.
-We would have prefered to compare the algorithms without the whole plugin. Unfortunately, we don't have access to all the source codes of our plugins. Therefore, it is not possible to implement Benchmark directly in the plugins. 
+We would have prefered to compare the algorithms without the whole plugin. Unfortunately, we don't have access to all the source codes of our plugins. Therefore, it is not possible to implement Benchmark directly in the plugins. However, as the Benchmark is relative study, if we run it in a comparable way for both plugins, it is still informative.
 
-To run our Benchmark, we have chosen an image in the image samples of *ImageJ* : *embryos.jpg*.
+To run our Benchmark, we have chosen an image in the image samples of *ImageJ* : *embryos.jpg*. We have chosen it because it is available to every ImageJ user and make those tests reproductible.
 
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/embryos.jpg "Reference Image")
 *Figure 1: Image from samples of ImageJ, used as a reference image to run the FFT plugins*
 
-
+To compare the two plugins, it is interesting to study the outputs of the *FFT* done on the embryos image. So the output images have been saved and showed here.
 
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/beat_FFT%202D_imag_no%20scal.jpg "Reference Image")
 *Figure 2: Output of ////// plugin showing the imaginary part of the image*
@@ -102,6 +103,14 @@ To run our Benchmark, we have chosen an image in the image samples of *ImageJ* :
 
 ![Alt text](https://github.com/Nine-s/Biologie_Structurale/blob/master/Images/fft_Power_of_img_embryos.jpg "Reference Image")
 *Figure 1: Output of ////// plugin showing the power spectrum of the image*
+
+Compare the *FFT* plugins can be done thanks to a quantitative approach, but it is hard to compare it qualitatively. Indeed, it is difficult to know what the *FFT* of an image should look like. But we can see that the two plugins do not display the same windows, and it is a thing we can compare.
+We can see that each plugin display two images. The *Xlib* plugin displays the image of the real part of the image (which interest us) and also the imaginary part of the image. The real part represent the cosinus waves and the imaginary part the sinus waves. ???
+We can see that the Power FFT of Xlib and the Real part FFT of Preibisch display the same information. Nevertheless, the second window open by the plugins bring us different information. .......
+
+Concerning the *Preibisch* plugin, it displays the power spectrum and the phase spectrum of the embryos. ???
+
+
 
 /!\ à faire -> numéroter les pages, revoir le nb d'iter warmup+test, rajouter des trucs dans l'intro, ajouter les images, 
 
