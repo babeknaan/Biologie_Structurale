@@ -1,24 +1,21 @@
 # The Fast Fourier Transform
 
 ## Introduction
-http://www.dtic.mil/dtic/tr/fulltext/u2/a212493.pdf
 
-Jean Baptiste Joseph Fourier is a XIXth century mathematician known for his work about warm propagation. This study leads him to transform any function of a variable in a series of periodic functions (Fourier series). (Théorie analytique de la chaleur
-Auteur : 	Jean-Baptiste-Joseph Fourier
-Éditeur: 	Paris : F. Didot, 1822.)
+Jean Baptiste Joseph Fourier is a XIXth century mathematician known for his work about warm propagation. His study leads him to transform any function of a variable in a series of periodic functions (Fourier series).
 Even if his work was uncomplete, this has been a breakthrough and it is just later, thanks to Joseph Louis Lagrange and Peter Gustav Lejeune Dirichlet, that the Fourier Transform became what we currently know.
-The Fourier Transform is a powerfull tool in image processing. 
+The Fourier Transform is now a powerfull tool in image processing. 
 It converts images from their spacial domain to the frequential domain without loss of information. 
-The Fast Fourier Transform (FFT) algorithm computes the Discrete Fourier Transform (DFT) which is a mathematical tool revealing periodicity in data. The DFT is used in many domains and is quite slow to compute (http://ieeexplore.ieee.org/document/1162257/?reload=true). The improvement of the FFT is to compute it more efficiently : *N^2* operations in DFT and *nlogn* operations for FFT.
+The Fast Fourier Transform (FFT) algorithm computes the Discrete Fourier Transform (DFT) which is a mathematical tool revealing periodicity in data. The DFT is used in many domains and is quite slow to compute. The improvement of the FFT is to compute it more efficiently : *N^2* operations in DFT and *nlogn* operations for FFT.
 
 
-The first algorithm of DFT was written by Gauss who worked on asteroid's orbites. It was then published by Cooley and Tukey, their algorithm is still the most comonly used and called the *Cooley Tukey FFT algorithm*.
-In the image processing domain, the FFT can be used to remove unwanted elements or to improve the visualisation for posterior treatments. As it works with periodic signals, it also can be used in sound treatment for instance.
+The first algorithm of DFT was written by Gauss who worked on asteroid's orbits. It was then published by James William Cooley and John Tukey, and their algorithm is still the most comonly used and called the *Cooley Tukey FFT algorithm*.
+In the image processing domain, the FFT can be used to remove unwanted elements or to improve the visualisation for posterior treatments. As it works with periodic signals, it is also used in sound treatment for instance.
 
 How the FFT algorithms work and what algorithm is the most efficient are the questions this study is based on. 
-To answer it, we will use ImageJ as a reference. *ImageJ* is an image processing program developed with Java language by the National Institutes of Health. It's an open architecture, and provides extensibility. Java plugins and recordable macros can be created to custom analysis and processing. This allows a great freedom of adapation to resolve many problem. 
-ImageJ is mainly used by the scientists, including the biologists.https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5554542/
-The base implemented function is not a Direct Fourier Transform but an Harley transform. It does similar operations but without using complex numbers so it is more efficient. As it is not a Fourier Transform, it will not be evocate later. However there are ImageJ *FFT* plugins that we can compare. The comparison will be done using Micro Benchmarking.
+To answer it, we will use ImageJ as a reference. *ImageJ* is an image processing program developed with Java language by the National Institutes of Health. It's an open architecture, and provides extensibility. Java plugins and recordable macros can be created to custom analysis and processing. This allows a great freedom of adapation to resolve many problems. 
+ImageJ is mainly used by scientists, including biologists.
+The basic implemented function is not a Direct Fourier Transform but an Harley transform. It does similar operations but without using complex numbers so it is more efficient. As it is not a Fourier Transform, it will not be evocated later. However there are ImageJ *FFT* plugins that we can compare. The comparison will be done using Micro Benchmarking.
 
 ## Material and Methods
 parler de la fft implémentée de base dans imageJ et de la FHT
@@ -125,10 +122,13 @@ récap résult+Discussion
 en ouv parler de la suite du projet
 
 ## References
-
-[^PIC1988]: Piccini F. Technical Memorandum: The Fast Hartley Transform as an alternative to the Fast Fourier Transform. Surevillance Research Laboratory.1988 Feb
+[^FOU1822]: Fourier JBJ. Théorie analytique de la chaleur. Paris F Didot. 1822
 
 [^HEI1984]: Heideman MT, Johnson DC, Sidney Burrus C. Gauss and the History of the Fast Fourier Transform. IEEE ASSP Magazine. 1984 Oct; 1(4):14-21
+
+[^SCH2012] Schneider CA, Rasband WS, Eliceiri KW. NIH Image to ImageJ: 25 years of Image Analysis. Nat Methods. 2012 Jul;9(7):671-675
+
+[^PIC1988]: Piccini F. Technical Memorandum: The Fast Hartley Transform as an alternative to the Fast Fourier Transform. Surveillance Research Laboratory.1988 Feb
 
 [^DUH1999]: Duhamel P, Vetterli M. Fast Fourier Transform: A Tutorial Review and a State of the Art. Signal Processing. 1999;19:259-299
 
