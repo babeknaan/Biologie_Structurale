@@ -43,8 +43,8 @@ As the Fourier Transform is widely used, a lot of algorithms have been made to c
 
 ### Prime Factor Algorithm (PFA)
 The PFA is also called *Good-Thomas Algorithm*.
-Algorithm that is derived from the ancient chinese remainder theorem.
-It is more efficient when factors of N are mutually prime, and is ideally combined with a mixed radix algorithm. Actually, the PFA can be confused with the radix Cooley&Tukey algorithm. But PFA can only work with relatively prime factors and requires a more complex re-indexing of the input, making it less used. However PFA doesn't need any twiddle factor during the computation process.
+This algorithm is derived from the ancient chinese remainder theorem.
+It is more efficient when factors of N are mutually prime, and is ideally combined with a mixed radix algorithm, sometimes with a convoltion. Actually, the PFA can be confused with the radix Cooley&Tukey algorithm. But PFA can only work with relatively prime factors and requires a more complex re-indexing of the input, making it less used. However PFA doesn't need any twiddle factor during the computation process. Furthermore, some studies showed interesting modular algorithms, using Fortran, which had improved computational efficiency of DFT.
 
 ### Cyclic Convolutionnal Algorithms
 Determined in late XXth century, They're also based on Cooley&Tukey Algorithm. We can distinguish 2 main algorithm. First *Rader's algorithm* (1968/Charles M. Rader), which is based on prime sized DFTs as a cyclic convolution. It only depends upon the periodicity of DFT Kernel. But a factor of 2 can be applied, saving the real data. One other is *Bluestein's Algorithm*, or *Chirp-z Transform*, wich computes a cyclic convolution for prime sized DFTs. The specialty of this algorithm is that it could compute the DFT, real DFT and zoom DFT. Bluestein FFT algorithm can be used to compute a contiguous subset of DFT frequency samples, and research are still made to improve is efficiency.
@@ -131,6 +131,10 @@ en ouv parler de la suite du projet
 [^PIC1988]: Piccini F. Technical Memorandum: The Fast Hartley Transform as an alternative to the Fast Fourier Transform. Surveillance Research Laboratory.1988 Feb
 
 [^DUH1999]: Duhamel P, Vetterli M. Fast Fourier Transform: A Tutorial Review and a State of the Art. Signal Processing. 1999;19:259-299
+
+[^KOL1977]: Kolab DP, Parks TW. A Prime Factor FFT Algorithm Using High Speed Convolution. IEEE Transactions of Acoustics, Speech. 1977 Aug;25(4)
+
+[^BUR1981]: Burrus CS, Eschenbacher PW. An In-Place, In-Order Prime Factor FFT Algorithm. IEEE Transactions on Acoustics, Speech, and Signal Processing. 1981 Aug;29(4)
 
 [^AMA2015]: Amannah CI, Bakpo FS. Simplified Bluestein numerical Fast Fourier Transforms Algorithm for DSP and ASP. International Journal of Research Granthaalayah. 2015 Nov
 
