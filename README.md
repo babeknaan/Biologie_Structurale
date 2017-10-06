@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Jean Baptiste Joseph Fourier is a XIXth century mathematician known for his work about warm propagation. His study leads him to transform any function of a variable in a series of periodic functions (Fourier series).[^FOU1822]
+Jean Baptiste Joseph Fourier is a XIXth century mathematician known for his work about warm propagation. His study leads him to transform any function of a variable in a series of periodic functions (Fourier series).[^|FOU1822]
 Even if his work was uncomplete, this has been a breakthrough and it is just later, thanks to Joseph Louis Lagrange and Peter Gustav Lejeune Dirichlet, that the Fourier Transform became what we currently know.
 The Fourier Transform is now a powerfull tool in image processing. 
 It converts images from their spacial domain to the frequential domain without loss of information. 
