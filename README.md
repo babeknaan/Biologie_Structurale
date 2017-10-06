@@ -100,11 +100,11 @@ Concerning the *Preibisch* plugin, it displays the power spectrum and the phase 
 
 
 ## Discussion
-remettre les résulats d'efficacité dans leur contexte (plus ou moins d'options proposées, date de sortie des plug in, parler du fait qu'on utilise que java etc.)
-Between the 2 plugins tested, micro-benchmarking showed that the one developed by Preibish is more efficient than the Xlib plugin which was released more than seven years after (Preibish released on 2008, 2015 for Xlib). It seems that the Cooley & Tukey Algorithm is then more efficient than Bluestein's algorithm. We decided not to run benchmark with reverse FFt, considering that it would give the same results. However, we only benchmarked the 2 programs on one single RGB image. This study could then have been completed by testing further different conditions, using 8-bits, 16-bits, 32-bits images. The results cannot be reliable though. Furthermore, the 2 plugins have a tridimensional FFT option, that could have been interresting to test too.   
- However, we tested only plugins running on ImageJ, making the choice limited. 
+Between the 2 plugins tested, micro-benchmarking showed that the one developed by Preibish is more efficient than the Xlib plugin which was released more than seven years after (Preibish released on 2008, 2015 for Xlib). It seems that the Cooley & Tukey Algorithm is then more efficient than Bluestein's algorithm. We decided not to run benchmark with reverse FFt, considering that it would give the same results. However, we only benchmarked the 2 programs on one single RGB image. This study could then have been completed by testing further different conditions, using 8-bits, 16-bits, 32-bits images. The results cannot be reliable though. Furthermore, the 2 plugins have a tridimensional FFT option, that could have been interesting to test too. 
 
- aures logiciel plein plein plein,
+ Another point is that we searched for plugins running only on ImageJ software, reducing the amount of avalaible programs. It would be interesting to look on FFT plugins included in other image processing softwares, such as cell-profiler (Biology, Microscopy), FTL-SE (Crystallography) or MatLab(Numerical Computing).
+ biblio : old
+ même si qqes études sur des algo modulaires, combinaison deplusieurs algo, rien n'a vraiment changé.
 ## Conclusion
 récap résult+Discussion
 en ouv parler de la suite du projet
