@@ -18,22 +18,12 @@ ImageJ is mainly used by scientists, including biologists.
 The basic implemented function is not a Direct Fourier Transform but an Harley transform. It does similar operations but without using complex numbers so it is more efficient. As it is not a Fourier Transform, it will not be evocated later. However there are ImageJ *FFT* plugins that we can compare. The comparison will be done using Micro Benchmarking.
 
 ## Material and Methods
-parler de la fft implémentée de base dans imageJ et de la FHT
 FFTJ / Sean Parsons + ref
-
 
 The principle of FFT is to apply several small DFT. As the Fourier Transform is wildely used, a lot of algorithms have been made to compute it.
 The most common algorithm is called the *Cooley Tukey FFT algorithm*. It consists in decomposing the DFT from a N DFT to N=N1*N2. So this algorithm does N1 DFT of length N2. Then, it does N multiplication by what is called a twiddle factor. A Twiddle factor is the complex constant factor used in this agorithm. The last step is to do N2 DFT of length N1.
-(http://studylib.net/doc/18577033/fast-fourier-transforms--a-tutorial-review-and-a-state-of...)
 
 The other FFT algorithms are very similar to this one, they respect the same basis. Their individuality consists in the "special cases" that the Cooley Tukey algorithm does not treat.
-
-
-https://www.dsprelated.com/freebooks/mdft/Bluestein_s_FFT_Algorithm.html :
-
- We can also name the Bluestein algoritm (chirp z-transform algorithm) and the Rader's FFT algorithm which are used to compute prime-lenght DFTs. (B. Gold and C. M. Rader, Digital Processing of Signals, New York: McGraw-Hill, 1969.) The difference between both is that the Bluestein algorithm also works when the length is not prime, which make it very usefull. It is one of the algorithm described in the result part. Those algorithms work by doing a cyclic convolution.
-Similarely, the prime factor algorithm (PFA) only works if the factors of N (N1 and N2) are relatively prime.
-
 
 -------------------------------------------
 The main principle of FFT is to apply several small Discrete Fourier Transforms (DFT). A DFT converts a finite sequence of N equally-spaced samples. In image processing, pixels value along a row or column are generally used. This sequence is then computed into a same length sequence of a complex-valued samples which are function of frequency. The DFT is therefore said to be a frequency domain representation of the original input. From a theoretical point of view, the complexity issue of the discrete Fourier transform has reached a certain maturity. Some work on length-2 DFTs showed the linear multiplicative complexity of DFT. Appart from that, as it deals with a finite amount of data, it is nowadays efficiently implemented in computers numerical FFT algorithms.
@@ -44,10 +34,10 @@ As the Fourier Transform is widely used, a lot of algorithms have been made to c
 ### Prime Factor Algorithm (PFA)
 The PFA is also called *Good-Thomas Algorithm*.
 This algorithm is derived from the ancient chinese remainder theorem.
-It is more efficient when factors of N are mutually prime, and is ideally combined with a mixed radix algorithm, sometimes with a convoltion. Actually, the PFA can be confused with the radix Cooley&Tukey algorithm. But PFA can only work with relatively prime factors and requires a more complex re-indexing of the input, making it less used. However PFA doesn't need any twiddle factor during the computation process. Furthermore, some studies showed interesting modular algorithms, using Fortran, which had improved computational efficiency of DFT.
+It is only efficient when factors of N are mutually prime, and is ideally combined with a mixed radix algorithm, sometimes with a convoltion. Actually, the PFA can be confused with the radix Cooley&Tukey algorithm. But PFA can only work with relatively prime factors and requires a more complex re-indexing of the input, making it less used. However PFA doesn't need any twiddle factor during the computation process. Furthermore, some studies showed interesting modular algorithms, using Fortran, which had improved computational efficiency of DFT.
 
 ### Cyclic Convolutionnal Algorithms
-Determined in late XXth century, They're also based on Cooley&Tukey Algorithm. We can distinguish 2 main algorithm. First *Rader's algorithm* (1968/Charles M. Rader), which is based on prime sized DFTs as a cyclic convolution. It only depends upon the periodicity of DFT Kernel. But a factor of 2 can be applied, saving the real data. One other is *Bluestein's Algorithm*, or *Chirp-z Transform*, wich computes a cyclic convolution for prime sized DFTs. The specialty of this algorithm is that it could compute the DFT, real DFT and zoom DFT. Bluestein FFT algorithm can be used to compute a contiguous subset of DFT frequency samples, and research are still made to improve is efficiency.
+Determined in late XXth century, They're also based on Cooley&Tukey Algorithm. We can distinguish 2 main algorithm. First *Rader's algorithm* (1968/Charles M. Rader), which is based on prime sized DFTs as a cyclic convolution. It only depends upon the periodicity of DFT Kernel. But a factor of 2 can be applied, saving the real data. One other is *Bluestein's Algorithm*, or *Chirp-z Transform*, wich,as *Rader's FFT*, computes a cyclic convolution for prime sized DFTs. A sgnificant difference is that Bluestein's Algorithm can also work when the length is not prime, which make it very usefull. The specialty of this algorithm is that it could compute the DFT, real DFT and zoom DFT. Bluestein FFT algorithm can be used to compute a contiguous subset of DFT frequency samples, and research are still made to improve is efficiency.
 
 ### Bruun's Algorithm (1978)
 It is based on a recursive polynomial factorization. It involve only a real coefficient until last computational stage. Furthermore, it may intrisically be less accurate than Cooley&Tukey. It is a good FFT based approach on real data though.
@@ -135,6 +125,8 @@ en ouv parler de la suite du projet
 [^KOL1977]: Kolab DP, Parks TW. A Prime Factor FFT Algorithm Using High Speed Convolution. IEEE Transactions of Acoustics, Speech. 1977 Aug;25(4)
 
 [^BUR1981]: Burrus CS, Eschenbacher PW. An In-Place, In-Order Prime Factor FFT Algorithm. IEEE Transactions on Acoustics, Speech, and Signal Processing. 1981 Aug;29(4)
+
+[^GOL1969]: Gold B, Rader CM. Digital Processing of Signals. New York McGraw-Hill. 1969
 
 [^AMA2015]: Amannah CI, Bakpo FS. Simplified Bluestein numerical Fast Fourier Transforms Algorithm for DSP and ASP. International Journal of Research Granthaalayah. 2015 Nov
 
